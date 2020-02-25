@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  phoenix:
+    image: "phoenix:v0.4"
+    container_name: phoenix
+    network_mode: host
+    volumes:
+      - /root/phoenix/build/bin:/phoenix/bin
+      - /root/phoenix/www:/phoenix/www
+
+  db:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: 996icu
+      MYSQL_DATABASE: app
+      MYSQL_USER: phoenix
+      MYSQL_PASSWORD: phoenix996icu
+    ports:
+      - "3306:3306"

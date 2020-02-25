@@ -1,0 +1,9 @@
+
+[database]
+ipaddr     = "129.204.186.24"
+user   = "root"
+passwd = "yufei123"
+
+
+[servers]
+ipaddr   = "0.0.0.0:9000"

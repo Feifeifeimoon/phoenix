@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+package manage;
+
+// 通过rpc管理proxy
+service ManageService {
+    //获取当前最大连接数
+    rpc MaxClientNum (google.protobuf.Empty) returns (google.protobuf.Int64Value);
+    //设置最大连接数
+    rpc SetMaxClientNum (google.protobuf.Int64Value) returns (google.protobuf.Empty);
+    // 当前连接客户端数量
+    rpc CurClientNum (google.protobuf.Empty) returns (google.protobuf.Int64Value);
+}
